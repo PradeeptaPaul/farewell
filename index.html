@@ -20,6 +20,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
 
         #player {
@@ -39,6 +40,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            z-index: 1;
         }
 
         h1 {
@@ -50,6 +52,17 @@
             font-size: 1.5rem;
             margin-bottom: 30px;
         }
+
+        #play-button {
+            cursor: pointer;
+            color: #fff;
+            font-size: 2rem;
+            transition: color 0.3s;
+        }
+
+        #play-button:hover {
+            color: #e50914; /* Netflix red */
+        }
     </style>
 </head>
 <body>
@@ -58,6 +71,7 @@
         <div id="overlay">
             <h1>Farewell</h1>
             <p>Watch our special farewell video</p>
+            <div id="play-button">&#9654;</div>
         </div>
     </div>
 
@@ -97,6 +111,12 @@
             event.target.setVolume(100);
             event.target.playVideo();
         }
+
+        // Add click event for the play button
+        document.getElementById('play-button').addEventListener('click', function() {
+            player.playVideo();
+            document.getElementById('overlay').style.display = 'none';
+        });
     </script>
 </body>
 </html>
