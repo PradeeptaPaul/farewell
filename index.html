@@ -3,31 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farewell</title>
+    <title>Farewell - Netflix Style</title>
     <style>
         body {
             margin: 0;
             overflow: hidden;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
         }
 
         #video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
+            position: relative;
             width: 100%;
             height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         #player {
             width: 100%;
             height: 100%;
         }
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
     </style>
 </head>
 <body>
     <div id="video-container">
-        <!-- Replace 'VIDEO_ID' with the actual video ID from your unlisted YouTube video -->
         <div id="player"></div>
+        <div id="overlay">
+            <h1>Farewell</h1>
+            <p>Watch our special farewell video</p>
+        </div>
     </div>
 
     <script>
