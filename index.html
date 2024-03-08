@@ -27,12 +27,61 @@
 <body>
     <div id="video-container">
         <!-- Replace 'VIDEO_ID' with the actual video ID from your unlisted YouTube video -->
-        <iframe id="video-player" src="https://www.youtube.com/embed/TdyuUu5Rc8A?autoplay=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div id="player"></div>
     </div>
 
     <script>
-        document.getElementById("video-player").setAttribute("allowfullscreen", "true");
-        document.getElementById("video-player").setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+        // Replace 'VIDEO_ID' with the actual video ID from your unlisted YouTube video
+        const videoId = 'TdyuUu5Rc8A';
+
+        // Load the YouTube IFrame Player API
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // Define the onYouTubeIframeAPIReady function
+        let player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '100%',
+                width: '100%',
+                videoId: videoId,
+                playerVars: {
+                    autoplay: 1,
+                    controls: 0,
+                    modestbranding: 1,
+                    playsinline: 1,
+                    fs: 1,
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                },
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+            event.target.mute();
+            event.target.setPlaybackQuality('hd1080');
+            event.target.setLoop(true);
+            event.target.setVolume(100);
+            event.target.playVideo();
+            event.target.mute();
+            event.target.setPlaybackQuality('hd1080');
+            event.target.setLoop(true);
+            event.target.setVolume(100);
+            event.target.playVideo();
+            event.target.mute();
+            event.target.setPlaybackQuality('hd1080');
+            event.target.setLoop(true);
+            event.target.setVolume(100);
+            event.target.playVideo();
+            event.target.mute();
+            event.target.setPlaybackQuality('hd1080');
+            event.target.setLoop(true);
+            event.target.setVolume(100);
+        }
     </script>
 </body>
 </html>
