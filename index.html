@@ -18,7 +18,7 @@
             height: 100vh;
         }
 
-        #video-player {
+        #player {
             width: 100%;
             height: 100%;
         }
@@ -53,6 +53,7 @@
                     modestbranding: 1,
                     playsinline: 1,
                     fs: 1,
+                    enablejsapi: 1,
                 },
                 events: {
                     'onReady': onPlayerReady,
@@ -61,26 +62,8 @@
         }
 
         function onPlayerReady(event) {
-            event.target.playVideo();
-            event.target.mute();
-            event.target.setPlaybackQuality('hd1080');
-            event.target.setLoop(true);
             event.target.setVolume(100);
             event.target.playVideo();
-            event.target.mute();
-            event.target.setPlaybackQuality('hd1080');
-            event.target.setLoop(true);
-            event.target.setVolume(100);
-            event.target.playVideo();
-            event.target.mute();
-            event.target.setPlaybackQuality('hd1080');
-            event.target.setLoop(true);
-            event.target.setVolume(100);
-            event.target.playVideo();
-            event.target.mute();
-            event.target.setPlaybackQuality('hd1080');
-            event.target.setLoop(true);
-            event.target.setVolume(100);
         }
     </script>
 </body>
