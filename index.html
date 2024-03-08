@@ -27,7 +27,12 @@
 <body>
     <div id="video-container">
         <!-- Replace 'VIDEO_ID' with the actual video ID from your unlisted YouTube video -->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/TdyuUu5Rc8A?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="video-player" src="https://www.youtube.com/embed/TdyuUu5Rc8A?autoplay=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+
+    <script>
+        document.getElementById("video-player").setAttribute("allowfullscreen", "true");
+        document.getElementById("video-player").setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+    </script>
 </body>
 </html>
