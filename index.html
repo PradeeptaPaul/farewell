@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded YouTube Video</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+        }
+
+        #video-player {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <!-- Replace 'VIDEO_ID' with the actual video ID from your unlisted YouTube video -->
+        <iframe id="video-player" src="https://youtu.be/TdyuUu5Rc8A?autoplay=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+</body>
+</html>
